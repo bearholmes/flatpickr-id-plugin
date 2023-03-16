@@ -1,6 +1,6 @@
 {
   "name": "flatpickr-id-plugin",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "flatpickr plugin",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/bearholmes/flatpickr-id-plugin#readme",
   "devDependencies": {
     "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "flatpickr": "^4.6.13"
   }
 }

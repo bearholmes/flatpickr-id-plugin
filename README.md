@@ -7,14 +7,16 @@ You can control the id property on the flatpickr element.
 ## Use
 
 ```vue
+// 'id', 'title', 'aria-label', 'aria-labelledby'
+
 <flat-pickr id="write_id" />
 ```
 
 ```javascript
-import idPlugin from 'flatpickr-id-plugin';
+import IdPlugin from 'flatpickr-id-plugin';
 
 // flatpickr config
 {
-    "plugins": [new idPlugin()]
+    "plugins": [new IdPlugin()]
 }
 ```
