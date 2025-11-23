@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flatpickr-id-plugin Demo</title>
+
+    <!-- flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .header {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .header h1 {
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+      }
+
+      .header p {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .demo-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .demo-section h2 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 0.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .info-box {
+        background: #f0f4ff;
+        border-left: 4px solid #667eea;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 4px;
+      }
+
+      .info-box h3 {
+        color: #667eea;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .info-box code {
+        background: white;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+        color: #764ba2;
+      }
+
+      .code-section {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 1.5rem;
+        border-radius: 6px;
+        margin-top: 1rem;
+        overflow-x: auto;
+      }
+
+      .code-section pre {
+        margin: 0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #667eea;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        margin-left: 0.5rem;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .feature-list li {
+        padding: 0.5rem 0;
+        color: #555;
+      }
+
+      .feature-list li:before {
+        content: '✓';
+        color: #667eea;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .github-link {
+        display: inline-block;
+        background: #333;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        margin-top: 1rem;
+        transition: background 0.3s;
+      }
+
+      .github-link:hover {
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🗓️ flatpickr-id-plugin</h1>
+        <p>Transfer ID and accessibility attributes to flatpickr inputs</p>
+        <a
+          href="https://github.com/bearholmes/flatpickr-id-plugin"
+          class="github-link"
+          >View on GitHub</a
+        >
+      </div>
+
+      <div class="demo-section">
+        <h2>Basic Example <span class="badge">Default</span></h2>
+
+        <div class="form-group">
+          <label for="basic-datepicker">Select a date:</label>
+          <input
+            type="text"
+            id="basic-datepicker"
+            title="Basic Datepicker"
+            placeholder="Click to select date"
+          />
+        </div>
+
+        <div class="info-box">
+          <h3>What's happening?</h3>
+          <p>
+            The <code>id="basic-datepicker"</code> and
+            <code>title="Basic Datepicker"</code> attributes are automatically
+            transferred from the original input to flatpickr's generated input
+            element.
+          </p>
+        </div>
+
+        <div class="code-section">
+          <pre>
+flatpickr('#basic-datepicker', {
+  plugins: [idPlugin()]
+});</pre
+          >
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Accessibility Example <span class="badge">ARIA</span></h2>
+
+        <div class="form-group">
+          <label id="birth-date-label">Birth Date:</label>
+          <input
+            type="text"
+            id="birth-date"
+            aria-labelledby="birth-date-label"
+            aria-label="Select your birth date"
+            placeholder="MM/DD/YYYY"
+          />
+        </div>
+
+        <div class="info-box">
+          <h3>Accessibility Features</h3>
+          <p>
+            ARIA attributes like <code>aria-label</code> and
+            <code>aria-labelledby</code> are preserved, ensuring screen readers
+            work correctly.
+          </p>
+        </div>
+
+        <div class="code-section">
+          <pre>
+flatpickr('#birth-date', {
+  plugins: [idPlugin()],
+  dateFormat: 'm/d/Y'
+});</pre
+          >
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Custom Configuration <span class="badge">Advanced</span></h2>
+
+        <div class="form-group">
+          <label for="custom-datepicker">Custom Delay:</label>
+          <input
+            type="text"
+            id="custom-datepicker"
+            title="Custom Configuration"
+            data-custom="custom-value"
+            placeholder="With custom settings"
+          />
+        </div>
+
+        <div class="info-box">
+          <h3>Configuration Options</h3>
+          <ul class="feature-list">
+            <li>
+              <strong>delay</strong>: Custom delay before transferring
+              attributes (default: 10ms)
+            </li>
+            <li>
+              <strong>attributes</strong>: Custom list of attributes to transfer
+            </li>
+            <li>
+              <strong>debug</strong>: Enable console logging for debugging
+            </li>
+          </ul>
+        </div>
+
+        <div class="code-section">
+          <pre>
+flatpickr('#custom-datepicker', {
+  plugins: [idPlugin({
+    delay: 20,
+    attributes: ['id', 'title', 'data-custom'],
+    debug: true
+  })]
+});</pre
+          >
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Date Range Example <span class="badge">Range</span></h2>
+
+        <div class="form-group">
+          <label for="date-range">Select Date Range:</label>
+          <input
+            type="text"
+            id="date-range"
+            title="Date Range Picker"
+            aria-label="Select start and end dates"
+            placeholder="Select range"
+          />
+        </div>
+
+        <div class="code-section">
+          <pre>
+flatpickr('#date-range', {
+  mode: 'range',
+  plugins: [idPlugin()]
+});</pre
+          >
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Features</h2>
+        <ul class="feature-list">
+          <li>
+            Automatically transfers <code>id</code>, <code>title</code>,
+            <code>aria-label</code>, <code>aria-labelledby</code>
+          </li>
+          <li>Works with altInput and mobileInput modes</li>
+          <li>Configurable delay and attribute list</li>
+          <li>TypeScript support with full type definitions</li>
+          <li>Comprehensive error handling</li>
+          <li>Optional debug logging</li>
+          <li>Zero dependencies (except flatpickr)</li>
+          <li>Lightweight (~2KB minified)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Plugin (using UMD build from dist) -->
+    <script src="../dist/index.js"></script>
+
+    <script>
+      // Basic Example
+      flatpickr('#basic-datepicker', {
+        plugins: [idPlugin()],
+      });
+
+      // Accessibility Example
+      flatpickr('#birth-date', {
+        plugins: [idPlugin()],
+        dateFormat: 'm/d/Y',
+      });
+
+      // Custom Configuration
+      flatpickr('#custom-datepicker', {
+        plugins: [
+          idPlugin({
+            delay: 20,
+            attributes: ['id', 'title', 'data-custom'],
+            debug: true,
+          }),
+        ],
+      });
+
+      // Date Range
+      flatpickr('#date-range', {
+        mode: 'range',
+        plugins: [idPlugin()],
+      });
+    </script>
+  </body>
+</html>
