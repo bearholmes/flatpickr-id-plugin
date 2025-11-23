@@ -189,7 +189,7 @@ By default, the following attributes are transferred:
 
 ## 🎨 Demo
 
-Run the hosted demo at https://bearholmes.github.io/flatpickr-id-plugin/examples/demo.html or open `examples/demo.html` locally to see the plugin in action:
+Try the deployed demo (pending Actions run) at https://bearholmes.github.io/flatpickr-id-plugin/examples/demo.html, or open `examples/demo.html` locally after running `npm run build` to inspect the plugin behavior:
 
 ```bash
 git clone https://github.com/bearholmes/flatpickr-id-plugin.git
