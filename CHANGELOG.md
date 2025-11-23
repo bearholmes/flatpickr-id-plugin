@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint configuration (`.eslintrc.cjs`, `.eslintignore`, `tsconfig.eslint.json`) plus a `npm run lint` script to exercise `src/` files.
 - GitHub Actions `ci.yml` that runs `format:check`, `lint`, and Jest per push/PR, and `deploy-demo.yml` to build `dist/`/`examples/` and publish `gh-pages`.
 
-
 ### Changed
 
 - Attribute transfer now accepts configurable delays and attribute sets, includes debug logging, and registers once in `loadedPlugins`.
@@ -34,6 +33,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for `id`, `title`, `aria-label`, `aria-labelledby`
 - Works with altInput and mobileInput modes
 
-[Unreleased]: https://github.com/bearholmes/flatpickr-id-plugin/compare/v1.0.3...HEAD
 [1.0.3]: https://github.com/bearholmes/flatpickr-id-plugin/releases/tag/v1.0.3
 [1.0.2]: https://github.com/bearholmes/flatpickr-id-plugin/releases/tag/v1.0.2
