@@ -20,6 +20,7 @@
 
 Inspired by [flatpickr's labelPlugin](https://github.com/flatpickr/flatpickr/blob/master/src/plugins/labelPlugin/labelPlugin.ts), this version adds TypeScript support, richer configuration, and more robust attribute handling.
 
+<a id="features"></a>
 ## ✨ Features
 
 - 🎯 **Automatic Attribute Transfer** - Transfers `id`, `title`, `aria-label`, and `aria-labelledby`
@@ -31,6 +32,7 @@ Inspired by [flatpickr's labelPlugin](https://github.com/flatpickr/flatpickr/blo
 - 📦 **Zero Dependencies** - Only requires flatpickr as peer dependency
 - 🪶 **Lightweight** - ~2KB minified
 
+<a id="installation"></a>
 ## 📦 Installation
 
 ### npm
@@ -57,6 +59,7 @@ pnpm add flatpickr-id-plugin
 <script src="https://cdn.jsdelivr.net/npm/flatpickr-id-plugin/dist/index.js"></script>
 ```
 
+<a id="usage"></a>
 ## 🚀 Usage
 
 ### Basic Usage
@@ -164,6 +167,7 @@ function DatePicker() {
 }
 ```
 
+<a id="api"></a>
 ## 📖 API
 
 ### `idPlugin(config?: IdPluginConfig)`
@@ -187,6 +191,7 @@ By default, the following attributes are transferred:
 - **`aria-label`** - Accessibility label for screen readers
 - **`aria-labelledby`** - Reference to label element
 
+<a id="demo"></a>
 ## 🎨 Demo
 
 Try the deployed demo (pending Actions run) at https://bearholmes.github.io/flatpickr-id-plugin/examples/demo.html, or open `examples/demo.html` locally after running `npm run build` to inspect the plugin behavior:
