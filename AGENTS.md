@@ -14,7 +14,7 @@
 - `npm run dev` – starts Rollup in watch mode for live rebuilding while editing `src/`.
 - `npm run lint` – runs ESLint via the shared `.eslintrc.cjs` config; CI executes this alongside format/typecheck/test on every push/PR.
 - `npm test`, `npm run test:watch`, `npm run test:coverage` – exercise the Jest suite (unit tests live under `src/__tests__`).
-- `npm run typecheck` – runs `tsc --noEmit` to validate typings; `npm run format` and `npm run format:check` invoke Prettier across the repo.
+- `npm run typecheck` – runs `tsc --noEmit` to validate typings; `npm run format` and `npm run format:check` invoke Prettier across the repo (generated bundles in `dist/` and the temporary `deploy/` folder are ignored via `.prettierignore`).
 
 ## Coding Style & Naming Conventions
 
