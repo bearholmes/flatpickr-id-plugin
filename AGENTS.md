@@ -38,3 +38,4 @@
 
 - GitHub Actions run `npm run format:check`, `npm run lint`, and `npm test` on every push and PR via `.github/workflows/ci.yml` so you can rely on a consistent Node 20-based pipeline.
 - The `deploy-demo.yml` workflow builds the bundle, copies `dist` + `examples` into a temporary `deploy` directory, and pushes that content to `gh-pages`, keeping `examples/demo.html` live whenever `main` is updated.
+- Committing locally also enforces the same checks because Husky’s pre-commit hook runs `npm run format:check`, `npm run lint`, and `npm test`; failing any of those will stop the commit and keep your working tree clean.
